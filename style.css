@@ -43,6 +43,10 @@ button {
     font-size: 1.8rem;
     color: #ffffff;
     cursor: pointer;
+    transition: background 0.4s ease-in-out;
+}
+button:hover {
+    background-color: #272727;
 }
 /* Navigation Section whit Hero */
 .main-head {
@@ -91,6 +95,55 @@ nav ul {
     padding: 5rem;
 }
 
+/* BENEFITS SECTION */
+
+#locations {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0, 0.5), transparent),url("/img/new-york-page.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.locations-head {
+    width: 90%;
+    margin: auto;
+}
+.locations-head h2 {
+    padding: 1rem 0rem;
+    text-decoration: underline;
+}
+.locations-head h3 {
+    padding: 4rem 0rem;
+}
+.cloud {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+.moving-cloud-1 {
+    animation: cloudAnimation 3s infinite alternate ease-in-out;
+}
+.moving-cloud-2 {
+    animation: cloudAnimation 3.2s infinite alternate ease-in-out;
+    top: 20%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+@keyframes cloudAnimation {
+    from {
+        transform: translate(10%, -10%);
+    }
+    to {
+        transform: translate(0%, 0%);
+    }
+}
+/* Media Query */
+
 @media screen and (max-width: 932px) {
     html {
         font-size: 45%;
@@ -100,6 +153,18 @@ nav ul {
     }
     #logo {
         padding: 2rem;
+    }
+    .cloud {
+        pointer-events: none;
+    }
+    .moving-cloud-1 {
+        z-index: -1;
+    }
+    .moving-cloud-2 {
+        z-index: -2;
+    }
+    .locations-head h3 {
+        color: #ffffff;
     }
 }
 
